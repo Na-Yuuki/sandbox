@@ -10,7 +10,7 @@ const Table: React.FC<TableProps> = ({ children, className, ...props }) => {
   return (
     <table
       {...props}
-      className={classNames("w-full border-gray-300 bg-white", className)}
+      className={classNames("w-full border border-gray-300", className)}
     >
       {children}
     </table>
@@ -26,10 +26,7 @@ const Thead: React.FC<TSectionProps> = ({ children, className, ...props }) => {
   return (
     <thead
       {...props}
-      className={classNames(
-        "border-b-[3px] text-left p-2 font-bold text-orange",
-        className
-      )}
+      className={classNames("border-b-[3px] p-2 font-bold", className)}
     >
       {children}
     </thead>
@@ -53,10 +50,7 @@ const TR: React.FC<TRProps> = ({ children, className, ...props }) => {
   return (
     <tr
       {...props}
-      className={classNames(
-        "border-b-2 last:border-0 cursor-pointer ",
-        className
-      )}
+      className={classNames("last:border-0 cursor-pointer ", className)}
     >
       {children}
     </tr>
@@ -70,7 +64,7 @@ type CellProps = React.DetailedHTMLProps<
 
 const TH: React.FC<CellProps> = ({ children, className, ...props }) => {
   return (
-    <th {...props} className={classNames("py-2 px-4", className)}>
+    <th {...props} className={classNames("border py-2 px-4", className)}>
       {children}
     </th>
   );
@@ -78,7 +72,7 @@ const TH: React.FC<CellProps> = ({ children, className, ...props }) => {
 
 const TD: React.FC<CellProps> = ({ children, className, ...props }) => {
   return (
-    <td {...props} className={classNames("py-2 px-4", className)}>
+    <td {...props} className={classNames("border py-2 px-4", className)}>
       <p className="py-2">{children}</p>
     </td>
   );
